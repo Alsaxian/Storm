@@ -8,6 +8,7 @@ import org.apache.storm.spout.SchemeAsMultiScheme;
 import org.apache.storm.topology.TopologyBuilder;
 
 import storm.bolt.ExitBolt;
+import storm.bolt.SplitBolt;
 import storm.producer.JCDecauxProducer;
 
 import java.util.Properties;
@@ -51,7 +52,7 @@ public class Topology {
 
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("kafka-spout", spout);
-        //builder.setBolt("stations-spitter", new SplitBolt(), nbExecutors).shuffleGrouping("kafka-spout");
+        builder.setBolt("stations-spitter", new SplitBolt(), nbExecutors).shuffleGrouping("kafka-spout");
         //builder.setBolt("disponibilite-counter", new CountBolt(), nbExecutors).shuffleGrouping("stations- spitter");
         builder.setBolt("exit", new ExitBolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("nofilter");
 

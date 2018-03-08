@@ -1,4 +1,0 @@
-storm\topology\Topology.class
-storm\bolt\ExitBolt.class
-storm\stream\StreamEmiter.class
-storm\producer\JCDecauxProducer.class
