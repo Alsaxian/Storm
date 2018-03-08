@@ -19,14 +19,8 @@ public class ExitBolt implements IRichBolt {
     private static final long serialVersionUID = 4262369370788107342L;
     //private static Logger logger = Logger.getLogger("ExitBolt");
     private OutputCollector collector;
-    String ipM = "";
-    int port = -1;
-    StreamEmiter semit = null;
 
-    public ExitBolt(int port, String ip) {
-        this.port = port;
-        this.ipM = ip;
-        this.semit = new StreamEmiter(this.port, this.ipM);
+    public ExitBolt() {
 
     }
 
@@ -37,7 +31,8 @@ public class ExitBolt implements IRichBolt {
 
         String n = t.getValueByField("json").toString();
 
-        this.semit.send(n);
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println(n);
         collector.ack(t);
 
         return;

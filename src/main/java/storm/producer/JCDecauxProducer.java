@@ -5,8 +5,13 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import storm.topology.Topology;
 
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
@@ -27,9 +32,15 @@ public class JCDecauxProducer {
     }
 
     public void start() {
-        for(int i = 0; i < 100; i++){
-            producer.send(new ProducerRecord<String, String>(Topology.topics, Integer.toString(i), apiData));
+
+        JsonReader jsonReader = Json.createReader(new StringReader(apiData));
+        JsonArray stations = jsonReader.readArray();
+
+        for (int i = 0; i < stations.size(); i++) {
+            JsonObject station = stations.getJsonObject(i);
+            producer.send(new ProducerRecord<String, String>(Topology.topics, Integer.toString(i), station.toString()));
         }
+
         producer.close();
     }
 }

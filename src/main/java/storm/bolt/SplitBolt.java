@@ -7,11 +7,14 @@ import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import storm.stream.StreamEmiter;
 
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import java.io.StringReader;
 import java.util.Map;
 
 public class SplitBolt implements IRichBolt {
@@ -24,10 +27,16 @@ public class SplitBolt implements IRichBolt {
 	@Override
     public void execute(Tuple input) {
         String input_str = input.getString(0);
-        JSONArray stations = new JSONArray(input_str);
-        
-        for (int i = 0; i < stations.length(); i++) {
-            JSONObject station = stations.getJSONObject(i);
+
+        //System.out.println("========================================");
+        //System.out.println(input_str);
+        //System.out.println("++++++++++++++++++++++++++++++++++++++++");
+
+        JsonReader jsonReader = Json.createReader(new StringReader(input_str));
+        JsonArray stations = jsonReader.readArray();
+
+        for (int i = 0; i < stations.size(); i++) {
+            JsonObject station = stations.getJsonObject(i);
             collector.emit(new Values(station.toString()));
         }
     }
