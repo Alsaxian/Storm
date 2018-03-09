@@ -19,7 +19,7 @@ import java.util.Map;
 
 
 public class Available3Hours extends BaseWindowedBolt {
-    private static final long serialVersionUID = 4262387370788107343L;
+
     private OutputCollector collector;
 
     @Override
@@ -60,9 +60,7 @@ public class Available3Hours extends BaseWindowedBolt {
             }
         }
 
-        //JsonArray jsonArray = Json.createArrayBuilder();
-
-        collector.emit(new Values("La disponibilité en vélos sur les 3 dernières heures est inférieure à 5"));
+        collector.emit(new Values("Les stations ayant la disponibilité en vélos sur les 3 dernières heures est inférieure à 5"));
 
         for (String name : listStations.keySet()) {
             if (listStations.get(name)) {

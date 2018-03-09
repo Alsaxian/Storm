@@ -9,6 +9,7 @@ import org.apache.storm.spout.SchemeAsMultiScheme;
 import org.apache.storm.topology.TopologyBuilder;
 
 import org.apache.storm.topology.base.BaseWindowedBolt;
+import org.apache.storm.topology.base.BaseWindowedBolt.Count;
 import storm.bolt.*;
 
 import java.util.Properties;
@@ -45,7 +46,8 @@ public class Topology {
         builder.setSpout("kafka-spout", spout);
         builder.setBolt("stations-splitter", new SplitBolt(), nbExecutors).shuffleGrouping("kafka-spout");
         builder.setBolt("available-detector", new AvailableBolt(), nbExecutors).shuffleGrouping("stations-splitter");
-        builder.setBolt("available-3h", new Available3Hours().withWindow(new BaseWindowedBolt.Duration(30, TimeUnit.SECONDS)), nbExecutors).shuffleGrouping("stations-splitter");
+        builder.setBolt("available-3h-detector", new Available3Hours().withWindow(new Count(10800), new Count(30)), nbExecutors).shuffleGrouping("stations-splitter");
+        //builder.setBolt("available-3h", new Available3Hours().withWindow(new BaseWindowedBolt.Duration(30, TimeUnit.SECONDS)), nbExecutors).shuffleGrouping("stations-splitter");
         builder.setBolt("exit", new ExitBolt(), nbExecutors).shuffleGrouping("available-detector");
         builder.setBolt("exit2", new Exit2Bolt(), nbExecutors).shuffleGrouping("available-3h");
 
