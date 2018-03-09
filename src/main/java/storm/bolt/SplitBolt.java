@@ -8,8 +8,6 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 
-import storm.stream.StreamEmiter;
-
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
@@ -25,14 +23,10 @@ public class SplitBolt implements IRichBolt {
 	}
 	
 	@Override
-    public void execute(Tuple input) {
-        String input_str = input.getString(0);
+    public void execute(Tuple t) {
+        String n = t.getString(0);
 
-        //System.out.println("========================================");
-        //System.out.println(input_str);
-        //System.out.println("++++++++++++++++++++++++++++++++++++++++");
-
-        JsonReader jsonReader = Json.createReader(new StringReader(input_str));
+        JsonReader jsonReader = Json.createReader(new StringReader(n));
         JsonArray stations = jsonReader.readArray();
 
         for (int i = 0; i < stations.size(); i++) {

@@ -1,5 +1,9 @@
+storm\bolt\AvailableBolt.class
 storm\bolt\SplitBolt.class
+storm\bolt\test\TestStatelessWindowBolt.class
+storm\producer\JCDecauxProducer.class
+storm\bolt\test\TestStatefulBolt.class
 storm\topology\Topology.class
 storm\bolt\ExitBolt.class
-storm\stream\StreamEmiter.class
-storm\producer\JCDecauxProducer.class
+storm\bolt\test\TestStatefulWindowBolt.class
+storm\bolt\test\TestStatelessBolt.class

@@ -7,7 +7,6 @@ import org.apache.storm.topology.IRichBolt;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
-import storm.stream.StreamEmiter;
 
 import java.util.Map;
 
@@ -29,10 +28,13 @@ public class ExitBolt implements IRichBolt {
      */
     public void execute(Tuple t) {
 
-        String n = t.getValueByField("json").toString();
+        String station = t.getValueByField("json").toString();
+        String type = t.getValueByField("type").toString();
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        System.out.println(n);
+        System.out.println(type);
+        System.out.println(station);
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++");
         collector.ack(t);
 
         return;
