@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bea2ff4-368b-4a84-a96a-8bcf00236778" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatefulBolt.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatefulWindowBolt.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatelessBolt.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatelessWindowBolt.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_2_10_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_2_10_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_2_10_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_2_10_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_storm_storm_kafka_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_storm_storm_kafka_1_0_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/Available3Hours.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storm/bolt/ExitBolt.java" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/ExitBolt.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storm/bolt/SplitBolt.java" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/SplitBolt.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storm/stream/StreamEmiter.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storm/topology/Topology.java" afterPath="$PROJECT_DIR$/src/main/java/storm/topology/Topology.java" />
-      <change beforePath="$PROJECT_DIR$/target/TopoStorm-1.0-SNAPSHOT-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/TopoStorm-1.0-SNAPSHOT-jar-with-dependencies.jar" />
-      <change beforePath="$PROJECT_DIR$/target/TopoStorm-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/TopoStorm-1.0-SNAPSHOT.jar" />
-      <change beforePath="$PROJECT_DIR$/target/classes/storm/bolt/ExitBolt.class" afterPath="$PROJECT_DIR$/target/classes/storm/bolt/ExitBolt.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/storm/stream/StreamEmiter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/storm/topology/Topology.class" afterPath="$PROJECT_DIR$/target/classes/storm/topology/Topology.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java" afterPath="$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,7 +20,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2247">
+            <state relative-caret-position="0">
               <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
               <folding />
             </state>
@@ -51,7 +30,7 @@
       <file leaf-file-name="Topology.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/storm/topology/Topology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="-288">
               <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -60,31 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestStatelessWindowBolt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatelessWindowBolt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestStatefulWindowBolt.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatefulWindowBolt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AvailableBolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            <state relative-caret-position="132">
+              <caret line="29" column="56" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -93,7 +52,7 @@
       <file leaf-file-name="ExitBolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/ExitBolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
+            <state relative-caret-position="399">
               <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,8 +64,8 @@
       <file leaf-file-name="SplitBolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/SplitBolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="33" column="59" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="59" />
+            <state relative-caret-position="189">
+              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1203#1204#0" expanded="true" />
@@ -115,6 +74,20 @@
                 <element signature="e#1445#1446#0" expanded="true" />
                 <element signature="e#1862#1863#0" expanded="true" />
                 <element signature="e#1904#1905#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Available3Hours.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/Available3Hours.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2225#2226#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,9 +130,12 @@
         <option value="$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatelessWindowBolt.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/storm/bolt/SplitBolt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/storm/bolt/ExitBolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/storm/topology/Topology.java" />
+        <option value="$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/storm/bolt/Available3HoursBolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/storm/bolt/test/Available3Hours.java" />
+        <option value="$PROJECT_DIR$/src/main/java/storm/bolt/Available3Hours.java" />
       </list>
     </option>
   </component>
@@ -283,6 +259,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="storm.bolt.test" />
       <recent name="storm.bolt" />
       <recent name="storm.stream" />
     </key>
@@ -739,7 +716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2247">
+        <state relative-caret-position="0">
           <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
           <folding />
         </state>
@@ -755,10 +732,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatefulWindowBolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatelessWindowBolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/ExitBolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/storm/topology/Topology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/SplitBolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="59" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="59" />
+        <state relative-caret-position="189">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1203#1204#0" expanded="true" />
@@ -771,47 +784,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/ExitBolt.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/Available3HoursBolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/AvailableBolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        <state relative-caret-position="132">
+          <caret line="29" column="56" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/storm/topology/Topology.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/Available3Hours.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="53" />
+        <state relative-caret-position="336">
+          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatelessWindowBolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/storm/bolt/test/TestStatefulWindowBolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>

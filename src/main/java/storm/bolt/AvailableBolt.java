@@ -46,7 +46,7 @@ public class AvailableBolt implements IRichBolt {
         }
 
         if (availableBikeStands == 0) {
-            type = "Il n'y a de place disponible";
+            type = "Il n'y a plus de place disponible";
             collector.emit(new Values(n, type));
             return;
         }
