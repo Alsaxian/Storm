@@ -10,6 +10,7 @@ import org.apache.storm.tuple.Values;
 import org.apache.storm.windowing.TupleWindow;
 
 import javax.json.Json;
+import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import java.io.StringReader;
@@ -32,7 +33,7 @@ public class Available3Hours extends BaseWindowedBolt {
         int availableBikes = 0;
         String nameStation = "";
         Boolean status = false;
-        Map<String, Boolean> listCheckStations = new HashMap<>();
+        Map<String, Boolean> listStations = new HashMap<>();
 
         for (Tuple t : inputWindow.get()) {
             String n = t.getValueByField("json").toString();
@@ -43,25 +44,31 @@ public class Available3Hours extends BaseWindowedBolt {
             nameStation = jsonObject.getString("name");
             availableBikes = jsonObject.getInt("available_bikes");
 
-            if (listCheckStations.containsKey(nameStation)) {
-                status = listCheckStations.get(nameStation);
+            if (listStations.containsKey(nameStation)) {
+                status = listStations.get(nameStation);
 
                 if (status) {
                     if (availableBikes >= 5) {
-                        listCheckStations.put(nameStation, false);
+                        listStations.put(nameStation, false);
                     }
                 }
             } else {
                 if (availableBikes < 5)
-                    listCheckStations.put(nameStation, true);
+                    listStations.put(nameStation, true);
                 else
-                    listCheckStations.put(nameStation, false);
+                    listStations.put(nameStation, false);
             }
         }
 
-        
+        //JsonArray jsonArray = Json.createArrayBuilder();
 
-        collector.emit(inputWindow.get(), new Values(row.toString()));
+        collector.emit(new Values("La disponibilité en vélos sur les 3 dernières heures est inférieure à 5"));
+
+        for (String name : listStations.keySet()) {
+            if (listStations.get(name)) {
+                collector.emit(new Values(name));
+            }
+        }
 
     }
 

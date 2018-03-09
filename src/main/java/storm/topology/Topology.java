@@ -8,12 +8,12 @@ import org.apache.storm.kafka.*;
 import org.apache.storm.spout.SchemeAsMultiScheme;
 import org.apache.storm.topology.TopologyBuilder;
 
-import storm.bolt.AvailableBolt;
-import storm.bolt.ExitBolt;
-import storm.bolt.SplitBolt;
+import org.apache.storm.topology.base.BaseWindowedBolt;
+import storm.bolt.*;
 
 import java.util.Properties;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class Topology {
 
@@ -45,7 +45,9 @@ public class Topology {
         builder.setSpout("kafka-spout", spout);
         builder.setBolt("stations-splitter", new SplitBolt(), nbExecutors).shuffleGrouping("kafka-spout");
         builder.setBolt("available-detector", new AvailableBolt(), nbExecutors).shuffleGrouping("stations-splitter");
+        builder.setBolt("available-3h", new Available3Hours().withWindow(new BaseWindowedBolt.Duration(30, TimeUnit.SECONDS)), nbExecutors).shuffleGrouping("stations-splitter");
         builder.setBolt("exit", new ExitBolt(), nbExecutors).shuffleGrouping("available-detector");
+        builder.setBolt("exit2", new Exit2Bolt(), nbExecutors).shuffleGrouping("available-3h");
 
         LocalCluster cluster = new LocalCluster();
         cluster.submitTopology("KafkaStorm", config, builder.createTopology());
