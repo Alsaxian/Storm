@@ -14,6 +14,7 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import java.io.StringReader;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,10 @@ public class Available3Hours extends BaseWindowedBolt {
     @Override
     public void execute(TupleWindow inputWindow) {
 
+        Date currentDate = new Date();
+        long currentTime = currentDate.getTime();
+
+        long timeStation = 0;
         int availableBikes = 0;
         String nameStation = "";
         Boolean status = false;
@@ -43,20 +48,23 @@ public class Available3Hours extends BaseWindowedBolt {
 
             nameStation = jsonObject.getString("name");
             availableBikes = jsonObject.getInt("available_bikes");
+            timeStation = Long.valueOf(jsonObject.getString("last_update"));
 
-            if (listStations.containsKey(nameStation)) {
-                status = listStations.get(nameStation);
+            if (currentTime - timeStation <= 10800000) {
+                if (listStations.containsKey(nameStation)) {
+                    status = listStations.get(nameStation);
 
-                if (status) {
-                    if (availableBikes >= 5) {
-                        listStations.put(nameStation, false);
+                    if (status) {
+                        if (availableBikes >= 5) {
+                            listStations.put(nameStation, false);
+                        }
                     }
+                } else {
+                    if (availableBikes < 5)
+                        listStations.put(nameStation, true);
+                    else
+                        listStations.put(nameStation, false);
                 }
-            } else {
-                if (availableBikes < 5)
-                    listStations.put(nameStation, true);
-                else
-                    listStations.put(nameStation, false);
             }
         }
 
